@@ -13,8 +13,11 @@ namespace src
             // 字串型別
             //DisplayStringExcept();
 
-            // 自訂型別 
-            DisplayClassExcept();
+            // 自訂型別 User
+            //DisplayUserExcept();
+
+            // 自訂型別 Member 實作 IEquatable<T>
+            DisplayMemberExcept();
         }
 
         static void DisplayStringExcept()
@@ -37,7 +40,7 @@ namespace src
 
             Console.WriteLine($"result : { JsonConvert.SerializeObject(result)}");
         }
-        static void DisplayClassExcept()
+        static void DisplayUserExcept()
         {
             var original = new List<User>()
             {
@@ -55,6 +58,33 @@ namespace src
                 new User{ Id = 2, Name = "Bell"},
                 new User{ Id = 3, Name = "Jane"},
                 new User{ Id = 4, Name = "Peter"},
+            };
+
+            Console.WriteLine($"remove : { JsonConvert.SerializeObject(remove)}");
+
+            var result = original.Except(remove);
+
+            Console.WriteLine($"result : { JsonConvert.SerializeObject(result)}");
+        }
+
+        static void DisplayMemberExcept()
+        {
+            var original = new List<Member>()
+            {
+                new Member{ Id = 1, Name = "Eric"},
+                new Member{ Id = 2, Name = "Bell"},
+                new Member{ Id = 3, Name = "Jane"},
+                new Member{ Id = 4, Name = "Peter"},
+                new Member{ Id = 5, Name = "Mary"},
+            };
+
+            Console.WriteLine($"original : { JsonConvert.SerializeObject(original)}");
+
+            var remove = new List<Member>()
+            {
+                new Member{ Id = 2, Name = "Bell"},
+                new Member{ Id = 3, Name = "Jane"},
+                new Member{ Id = 4, Name = "Peter"},
             };
 
             Console.WriteLine($"remove : { JsonConvert.SerializeObject(remove)}");
