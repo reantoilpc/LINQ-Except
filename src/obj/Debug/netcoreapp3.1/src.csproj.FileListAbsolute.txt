@@ -10,3 +10,5 @@
 /Users/ray/GitHub/LINQ-Except/src/obj/Debug/netcoreapp3.1/src.dll
 /Users/ray/GitHub/LINQ-Except/src/obj/Debug/netcoreapp3.1/src.pdb
 /Users/ray/GitHub/LINQ-Except/src/obj/Debug/netcoreapp3.1/src.genruntimeconfig.cache
+/Users/ray/GitHub/LINQ-Except/src/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/ray/GitHub/LINQ-Except/src/obj/Debug/netcoreapp3.1/src.csproj.CopyComplete

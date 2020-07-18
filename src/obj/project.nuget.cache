@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MHMqChWi/gfjM7wrlerkaPb3gL2/WZmXmn3CItmFggZIDQJilKvNZXlnCgkEt5YekkX+yIxNSvY3viuka/nD3A==",
+  "dgSpecHash": "az5k8a5u2ZOKEtJGS0tCVLJmvS0D+kiTu9WCf8HxnGH1bztnApHMONYM7dzIE3vVgiQVvWJpypin7Yfu5t6eEg==",
   "success": true,
   "projectFilePath": "/Users/ray/GitHub/LINQ-Except/src/src.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/ray/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
