@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using Newtonsoft.Json;
 using src.Model;
+using src.Infrastructure;
 
 namespace src
 {
@@ -17,7 +18,10 @@ namespace src
             //DisplayUserExcept();
 
             // 自訂型別 Member 實作 IEquatable<T>
-            DisplayMemberExcept();
+            //DisplayMemberExcept();
+
+            // 自訂型別 User 自訂 UserComparer 實作 IEqualityComparer<T>
+            DisplayUserExceptByComparer();
         }
 
         static void DisplayStringExcept()
@@ -66,7 +70,6 @@ namespace src
 
             Console.WriteLine($"result : { JsonConvert.SerializeObject(result)}");
         }
-
         static void DisplayMemberExcept()
         {
             var original = new List<Member>()
@@ -90,6 +93,32 @@ namespace src
             Console.WriteLine($"remove : { JsonConvert.SerializeObject(remove)}");
 
             var result = original.Except(remove);
+
+            Console.WriteLine($"result : { JsonConvert.SerializeObject(result)}");
+        }
+        static void DisplayUserExceptByComparer()
+        {
+            var original = new List<User>()
+            {
+                new User{ Id = 1, Name = "Eric"},
+                new User{ Id = 2, Name = "Bell"},
+                new User{ Id = 3, Name = "Jane"},
+                new User{ Id = 4, Name = "Peter"},
+                new User{ Id = 5, Name = "Mary"},
+            };
+
+            Console.WriteLine($"original : { JsonConvert.SerializeObject(original)}");
+
+            var remove = new List<User>()
+            {
+                new User{ Id = 2, Name = "Bell"},
+                new User{ Id = 3, Name = "Jane"},
+                new User{ Id = 4, Name = "Peter"},
+            };
+
+            Console.WriteLine($"remove : { JsonConvert.SerializeObject(remove)}");
+
+            var result = original.Except(remove, new UserComparer());
 
             Console.WriteLine($"result : { JsonConvert.SerializeObject(result)}");
         }
