@@ -1,8 +1,8 @@
 ### LINQ Except 使用需注意地方
 
-- Except 是以 Euquals 比對結果當依據，當使用在數值型資料(string、int)，可以幫助我們找出兩個 IEnumerable<T> 集合的差異項目。
-- 但是使用在自訂類別上就會發現，執行結果就不如預期，沒有排除相同項目。
-- 因為自訂類別是屬於 Reference Type 變數需要指向同一個記憶體位址，才算相同
+- LINQ Except 是以 Euquals 比對結果當依據，使用在數值型別的集合(如string、int)，可以幫助我們找出兩個 IEnumerable<T> 集合的差異項目。
+- 但使用在自訂類別上，執行結果就會不如預期，並沒有排除相同項目。
+- 因為自訂類別是屬於 Reference Type 變數需要指向同一個記憶體位址，才算相同。
 
 ### 自訂類別如何正常使用 LINQ Except 
 
